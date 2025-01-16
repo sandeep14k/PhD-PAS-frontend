@@ -210,6 +210,24 @@ const info: { field: string; value: string; disabled: boolean; api_id: any }[] =
       disabled: false,
       api_id: "disability",
     },
+    {
+      field: "GATE Score",
+      value: "Enter your gate score",
+      disabled: false,
+      api_id: "gate_score",
+    },
+    {
+      field: "JAM Score",
+      value: "Enter your jam score",
+      disabled: false,
+      api_id: "jam_score",
+    },
+    {
+      field: "NET Score",
+      value: "Enter your net score",
+      disabled: false,
+      api_id: "net_score",
+    },
   ];
 function Profile() {
   const [StudentData, setStudentData] = useState<Student>({ ID: 0 } as Student);
@@ -225,6 +243,8 @@ function Profile() {
     fetch();
   }, [token]);
   const photoLink = `https://oa.cc.iitk.ac.in/Oa/Jsp/Photo/${StudentData.roll_no}_0.jpg`;
+  // eslint-disable-next-line no-console
+
   const handleValue = (val: string) => {
     switch (val) {
       case "dob":
