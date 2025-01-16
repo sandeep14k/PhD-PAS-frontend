@@ -282,7 +282,7 @@ function ProfileEdit() {
                   <FormControl
                     fullWidth
                     variant="standard"
-                    error={!!errors.stage_of_phd} // Highlight error state
+                    error={!!errors?.stage_of_phd} // Highlight error state
                   >
                     <InputLabel>Stage of PhD</InputLabel>
                     <Select
