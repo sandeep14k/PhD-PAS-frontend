@@ -282,15 +282,10 @@ function ProfileEdit() {
                   <FormControl
                     fullWidth
                     variant="standard"
-                    error={!!errors?.stage_of_phd} // Highlight error state
+                    error={!!(errors?.stage_of_phd || false)}
                   >
                     <InputLabel>Stage of PhD</InputLabel>
-                    <Select
-                      {...register("stage_of_phd", {
-                        required: "Stage of PhD is required",
-                      })}
-                      defaultValue="" // Ensure default empty value
-                    >
+                    <Select {...register("stage_of_phd")} defaultValue="">
                       <MenuItem value="">
                         <em>Select a stage</em>
                       </MenuItem>
@@ -301,7 +296,7 @@ function ProfileEdit() {
                       ))}
                     </Select>
                     <FormHelperText>
-                      {errors.stage_of_phd ? errors.stage_of_phd.message : ""}
+                      {errors?.stage_of_phd?.message || ""}
                     </FormHelperText>
                   </FormControl>
                 </Grid>
