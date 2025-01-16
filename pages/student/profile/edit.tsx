@@ -736,7 +736,7 @@ function ProfileEdit() {
                   <TextField
                     fullWidth
                     type="text"
-                    id="standard-basic"
+                    id="gate-score"
                     variant="standard"
                     {...register("gate_score", {
                       required: "This field is required",
@@ -747,12 +747,13 @@ function ProfileEdit() {
                     }
                   />
                 </Grid>
+
                 <Grid item xs={12} sm={6}>
                   <p>JAM Score</p>
                   <TextField
                     fullWidth
                     type="text"
-                    id="standard-basic"
+                    id="jam-score"
                     variant="standard"
                     {...register("jam_score", {
                       required: "This field is required",
@@ -763,17 +764,18 @@ function ProfileEdit() {
                     }
                   />
                 </Grid>
+
                 <Grid item xs={12} sm={6}>
                   <p>NET Score</p>
                   <TextField
                     fullWidth
                     type="text"
-                    id="standard-basic"
+                    id="net-score"
                     variant="standard"
                     {...register("net_score", {
                       required: "This field is required",
                     })}
-                    error={!!errors.gate_score}
+                    error={!!errors.net_score}
                     helperText={
                       errors.net_score ? errors.net_score.message : ""
                     }
