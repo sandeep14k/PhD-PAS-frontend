@@ -5,7 +5,6 @@ import {
   FormControl,
   FormHelperText,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   Stack,
@@ -279,26 +278,25 @@ function ProfileEdit() {
 
                 <Grid item xs={12} sm={6}>
                   <p>Stage of PhD</p>
-                  <FormControl
+                  <Select
                     fullWidth
                     variant="standard"
-                    error={!!(errors?.stage_of_phd || false)}
+                    required
+                    {...register("specialization", {
+                      required: "Stage of PhD is required",
+                    })}
+                    // onChange={(e) => {
+                    //   setDept(e.target.value as string);
+                    // }}
                   >
-                    <InputLabel>Stage of PhD</InputLabel>
-                    <Select {...register("stage_of_phd")} defaultValue="">
-                      <MenuItem value="">
-                        <em>Select a stage</em>
+                    <MenuItem value="" />
+                    {/* <MenuItem value="NA">None</MenuItem> */}
+                    {StagesofPhD.map((stage) => (
+                      <MenuItem key={stage} value={stage}>
+                        {stage}
                       </MenuItem>
-                      {StagesofPhD.map((stage) => (
-                        <MenuItem key={stage} value={stage}>
-                          {stage}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                    <FormHelperText>
-                      {errors?.stage_of_phd?.message || ""}
-                    </FormHelperText>
-                  </FormControl>
+                    ))}
+                  </Select>
                 </Grid>
 
                 <Grid item xs={12} sm={6}>
