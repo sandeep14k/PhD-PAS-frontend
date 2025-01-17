@@ -731,42 +731,6 @@ function ProfileEdit() {
                     )}
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                  <p>GATE Score</p>
-                  <TextField
-                    fullWidth
-                    type="text"
-                    id="standard-basic"
-                    variant="standard"
-                    {...register("gate_score", {
-                      required: "This field is required",
-                    })}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <p>JAM Score</p>
-                  <TextField
-                    fullWidth
-                    type="text"
-                    id="standard-basic"
-                    variant="standard"
-                    {...register("jam_score", {
-                      required: "This field is required",
-                    })}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <p>NET Score</p>
-                  <TextField
-                    fullWidth
-                    type="text"
-                    id="standard-basic"
-                    variant="standard"
-                    {...register("net_score", {
-                      required: "This field is required",
-                    })}
-                  />
-                </Grid>
               </Grid>
             </Card>
           </Stack>
