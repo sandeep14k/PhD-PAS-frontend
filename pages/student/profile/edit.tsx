@@ -21,50 +21,7 @@ import { Branches, StagesofPhD, func } from "@components/Utils/matrixUtils";
 import { getId } from "@components/Parser/parser";
 
 function ProfileEdit() {
-  const [StudentData, setStudentData] = useState<Student>({
-    ID: 0,
-    roll_no: "",
-    name: "",
-    program: "",
-    department: "",
-    program_2: "",
-    department_2: "",
-    specialization: "",
-    preference: "",
-    gender: "",
-    disability: "",
-    dob: 0,
-    expected_graduation_year: 0,
-    iitk_email: "",
-    personal_email: "",
-    phone: "",
-    alternate_phone: "",
-    whatsapp_number: "",
-    program_department_id: 0,
-    secondary_program_department_id: 0,
-    current_cpi: 0,
-    ug_cpi: 0,
-    tenth_board: "",
-    tenth_year: 0,
-    tenth_marks: 0,
-    twelfth_board: "",
-    twelfth_year: 0,
-    twelfth_marks: 0,
-    entrance_exam: "",
-    entrance_exam_rank: 0,
-    category: "",
-    category_rank: 0,
-    current_address: "",
-    permanent_address: "",
-    friend_name: "",
-    friend_phone: "",
-    is_editable: "",
-    is_verified: false,
-    gate_score: 0,
-    jam_score: 0,
-    net_score: 0,
-    stage_of_phd: "",
-  });
+  const [StudentData, setStudentData] = useState<Student>({ ID: 0 } as Student);
   const {
     register,
     handleSubmit,
@@ -779,49 +736,35 @@ function ProfileEdit() {
                   <TextField
                     fullWidth
                     type="text"
-                    id="gate-score"
+                    id="standard-basic"
                     variant="standard"
                     {...register("gate_score", {
                       required: "This field is required",
                     })}
-                    error={!!errors.gate_score}
-                    helperText={
-                      errors.gate_score ? errors.gate_score.message : ""
-                    }
                   />
                 </Grid>
-
                 <Grid item xs={12} sm={6}>
                   <p>JAM Score</p>
                   <TextField
                     fullWidth
                     type="text"
-                    id="jam-score"
+                    id="standard-basic"
                     variant="standard"
                     {...register("jam_score", {
                       required: "This field is required",
                     })}
-                    error={!!errors.jam_score}
-                    helperText={
-                      errors.jam_score ? errors.jam_score.message : ""
-                    }
                   />
                 </Grid>
-
                 <Grid item xs={12} sm={6}>
                   <p>NET Score</p>
                   <TextField
                     fullWidth
                     type="text"
-                    id="net-score"
+                    id="standard-basic"
                     variant="standard"
                     {...register("net_score", {
                       required: "This field is required",
                     })}
-                    error={!!errors.net_score}
-                    helperText={
-                      errors.net_score ? errors.net_score.message : ""
-                    }
                   />
                 </Grid>
               </Grid>
